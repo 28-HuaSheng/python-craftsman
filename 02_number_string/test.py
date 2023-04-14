@@ -153,7 +153,9 @@ def fun15():
     print(arr1)
     join = " ".join(arr1),arr2[1]
     print(join)
-    tet = "ssfsdfsdf","sdfsfsdfsdfsdfsd"
+    tet = "ssfsdfsdf","sdfsfsdfsdfsdfsd"  #这是一个tuple,不能进行改变内部值  TypeError: 'tuple' object does not support item assignment
+    print(tet)
+    tet[1]="hahah"
     print(tet)
 
 
@@ -180,6 +182,6 @@ if __name__ == '__main__':
     # fun11()
     # fun12()
     # fun13()
-    #  fun14()
-    # fun15()
-    fun16()
+      fun14()
+    #  fun15()
+    # fun16()
