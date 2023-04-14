@@ -73,6 +73,7 @@ def fun7():
     # 另一种格式化
     print(f"this name is:{username},and age is:{age:d}")
 
+
 # 字符向右移动20
 def fun8():
     username = "huang"
@@ -80,19 +81,20 @@ def fun8():
     print(f"{username:>30}")
     print(f"{username:>40}")
 
+
 # 还是格式化
 def fun9():
-    nameA,nameB,nameC = "aaaaaa","bbbbb","cccccc"
-    print("{0}------{1}-------{2}------{0}".format(nameA,nameB,nameC))
+    nameA, nameB, nameC = "aaaaaa", "bbbbb", "cccccc"
+    print("{0}------{1}-------{2}------{0}".format(nameA, nameB, nameC))
     print(f"{nameA}------{nameC}-------{nameC}------{nameC}")
-
 
 
 def fun10():
     words = ["this is some word:"]
     for i in range(10):
-        words.append(f"{i+1}")
+        words.append(f"{i + 1}")
     print('\n'.join(words))
+
 
 # 字符串一些方法
 def fun11():
@@ -102,8 +104,66 @@ def fun11():
     print(word.isdigit())
     print(f"split : {word.split(' ')}")
     print(f"partition : {word.partition(' ')}")
-    print(f"partition : {word.partition('world')}") #通过给定分隔符把原字符分三段： 分隔符前/分隔符/分隔符后
+    print(f"partition : {word.partition('world')}")  # 通过给定分隔符把原字符分三段： 分隔符前/分隔符/分隔符后
     print("-------".join(word.split(" ")))
+
+
+# translate 一次性替换多个符号
+def fun12():
+    word, name = "你好，我是刘某。我的标点等待替换。", "发发发，123，"
+    word_table = word.maketrans('，。', ',.')
+    name_table = name.maketrans('，', '!')
+    new_word = word.translate(word_table)
+    new_name = name.translate(name_table)
+    print(new_word)
+    print(new_name)
+
+
+def fun13():
+    # 一字节 = 8位 = xYY(16进两位刚好表示一个字节)
+    str_str = "hello, 摩托"
+    print(type(str_str))
+
+    print(str_str.encode())
+
+    # 证明默认是utf8编码
+    print(str_str.encode() == str_str.encode('UTF-8'))
+
+    str_byte = b'helllooooooo'
+    print(type(str_byte))
+    print(str_byte.decode())
+
+
+
+def fun14():
+    log_line = '"AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36" 47632'
+    l = log_line.split()
+    print(l)
+    print(l[:-1])
+    line_ = " ".join(l[:-1]), log_line[-1]
+    print(line_)
+    print(line_[0])
+    print(line_[1])
+
+
+
+def fun15():
+    arr1 = ["ssssss","ooooooo","bbbbbb"]
+    arr2 = ["我们","花园"]
+    print(arr1)
+    join = " ".join(arr1),arr2[1]
+    print(join)
+    tet = "ssfsdfsdf","sdfsfsdfsdfsdfsd"
+    print(tet)
+
+
+# 字符切割 从右往左
+def fun16():
+    str = "heew sdfsd,sdfds sdf sdf"
+    print(str.split(' '))
+    print(str.split(' ',maxsplit=1)) #切割一次
+    print(str.rsplit(' ',maxsplit=1))
+
 
 
 if __name__ == '__main__':
@@ -117,4 +177,9 @@ if __name__ == '__main__':
     # fun8()
     # fun9()
     # fun10()
-    fun11()
+    # fun11()
+    # fun12()
+    # fun13()
+    #  fun14()
+    # fun15()
+    fun16()

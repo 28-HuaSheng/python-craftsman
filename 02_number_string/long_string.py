@@ -10,9 +10,11 @@ logger = logging.getLogger(__name__)
 logger.addHandler(hdr)
 logger.setLevel(logging.DEBUG)
 
+
 def main():
     logger.info(("There is something really bad happened during the "
                  "process. Please contact your administrator."))
+
 
 def main():
     # if user.is_active:
@@ -23,7 +25,6 @@ def main():
             - The Shining (1980)
             - Saw (2004)""")
     print(message)
-
 
 
 if __name__ == '__main__':

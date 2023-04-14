@@ -33,5 +33,5 @@ movies = [
     ('Mulan', None),
 ]
 
-print(render_movies('piglei', movies))
+# print(render_movies('piglei', movies))
 print(render_movies_j2('piglei', movies))
