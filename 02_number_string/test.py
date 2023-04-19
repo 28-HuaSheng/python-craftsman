@@ -57,7 +57,8 @@ def fun6():
     str3 = str[::-1]
     print(str3)
 
-    str4 = "".join(reversed(str))
+    print(reversed(str))
+    str4 = "".join(reversed(str))  # join--连接任意数量的字符串，比如用 ""连接一系列字符, " ".join(数组)表示用空格把数组所有元素连接成一个字符串
     print(str4)
 
 
@@ -134,9 +135,8 @@ def fun13():
     print(str_byte.decode())
 
 
-
 def fun14():
-    log_line = '"AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36" 47632'
+    log_line = '"AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36"         47632'
     l = log_line.split()
     print(l)
     print(l[:-1])
@@ -146,16 +146,15 @@ def fun14():
     print(line_[1])
 
 
-
 def fun15():
-    arr1 = ["ssssss","ooooooo","bbbbbb"]
-    arr2 = ["我们","花园"]
+    arr1 = ["ssssss", "ooooooo", "bbbbbb"]
+    arr2 = ["我们", "花园"]
     print(arr1)
-    join = " ".join(arr1),arr2[1]
+    join = " ".join(arr1), arr2[1]
     print(join)
-    tet = "ssfsdfsdf","sdfsfsdfsdfsdfsd"  #这是一个tuple,不能进行改变内部值  TypeError: 'tuple' object does not support item assignment
+    tet = "ssfsdfsdf", "sdfsfsdfsdfsdfsd"  # 这是一个tuple,不能进行改变内部值  TypeError: 'tuple' object does not support item assignment
     print(tet)
-    tet[1]="hahah"
+    tet[1] = "hahah"
     print(tet)
 
 
@@ -163,9 +162,8 @@ def fun15():
 def fun16():
     str = "heew sdfsd,sdfds sdf sdf"
     print(str.split(' '))
-    print(str.split(' ',maxsplit=1)) #切割一次
-    print(str.rsplit(' ',maxsplit=1))
-
+    print(str.split(' ', maxsplit=1))  # 切割一次
+    print(str.rsplit(' ', maxsplit=1))
 
 
 if __name__ == '__main__':
@@ -182,6 +180,6 @@ if __name__ == '__main__':
     # fun11()
     # fun12()
     # fun13()
-      fun14()
-    #  fun15()
-    # fun16()
+    #    fun14()
+    fun15()
+# fun16()
