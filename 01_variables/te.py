@@ -23,11 +23,12 @@ def test4():
     arrA,(arrB,arrC) = arr
     print(arrA)
     print(arrB)
+    print(arrC)
 
 
 # 动态解包
 def test5():
-    arr = ["bobo","banana","apple","orage","xiuxiu"]
+    arr = ["bobo","banana","apple","orage","dsfsdfs","xiuxiu"]
     nameA,*fruit,nameB = arr
     print(nameB)
     print(fruit)
