@@ -50,4 +50,6 @@ def analyze_v1():
 
 
 if __name__ == "__main__":
-    analyze_v1()
+    # analyze_v1()
+    l = list(PagePerfLevel)
+    print(l.index('Between 100 and 300 ms'))
