@@ -347,6 +347,22 @@ def fun18():
     print(id(items[2]),id(items_deep_cp[2])) # 不是一个对象了
 
 
+# 生成器 目的在按需返回 不是一次性全部返回
+def generateNum(max_num):
+    for i in range(0,max_num):
+        if i%2 == 0:
+            yield i
+# 生成器
+def fun19():
+    num = generateNum(10)
+    print(num)
+    for i in generateNum(10):
+        print(i)
+
+    print(list(generateNum(10)))
+
+
+
 
 if __name__ == '__main__':
     print("---main start---")
@@ -367,4 +383,5 @@ if __name__ == '__main__':
     # fun15()
     # fun16()
     # fun17()
-    fun18()
+    # fun18()
+    fun19()
