@@ -2,7 +2,7 @@ from decimal import Decimal
 
 
 # 整型/浮点互相转换
-def fun1():
+def test1():
     temp = 1000
     floats = 222.222
     print(temp, floats)
@@ -10,7 +10,7 @@ def fun1():
 
 
 # 浮点计算 (注意浮点陷阱)
-def fun2():
+def test2():
     tmp = 0.1
     tmp2 = 0.2
     print(tmp + tmp2)
@@ -22,14 +22,14 @@ def fun2():
 
 
 # 布尔类型也是数字
-def fun3():
+def test3():
     var1 = True
     var2 = False
     print(int(var1), int(var2))
 
 
 # 获取奇偶数量
-def fun4():
+def test4():
     numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     count = 0
     for i in numbers:
@@ -39,17 +39,17 @@ def fun4():
 
 
 # 根据True=1 False=0特性获取奇偶数量
-def fun5():
+def test5():
     numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     count = sum(i % 2 == 0 for i in numbers)
     print(count)
 
 
 # 字符串
-def fun6():
+def test6():
     str = "hello, world"
-    for i in str:
-        print(i)
+    # for i in str:
+    #     print(i)
 
     str2 = str[1:3]
     print(str2)
@@ -63,7 +63,7 @@ def fun6():
 
 
 # 字符串格式
-def fun7():
+def test7():
     username, age = "huangchunbo", 18
     # c语言格式化
     print("this name is:%s,and age is:%d" % (username, age))
@@ -76,7 +76,7 @@ def fun7():
 
 
 # 字符向右移动20
-def fun8():
+def test8():
     username = "huang"
     print("{:>20}".format(username))
     print(f"{username:>30}")
@@ -84,13 +84,13 @@ def fun8():
 
 
 # 还是格式化
-def fun9():
+def test9():
     nameA, nameB, nameC = "aaaaaa", "bbbbb", "cccccc"
     print("{0}------{1}-------{2}------{0}".format(nameA, nameB, nameC))
     print(f"{nameA}------{nameC}-------{nameC}------{nameC}")
 
 
-def fun10():
+def test10():
     words = ["this is some word:"]
     for i in range(10):
         words.append(f"{i + 1}")
@@ -98,7 +98,7 @@ def fun10():
 
 
 # 字符串一些方法
-def fun11():
+def test11():
     word = "hello, world , i am ..."
     numberStr = "123"
     print(numberStr.isdigit())
@@ -110,17 +110,23 @@ def fun11():
 
 
 # translate 一次性替换多个符号
-def fun12():
+def test12():
     word, name = "你好，我是刘某。我的标点等待替换。", "发发发，123，"
     word_table = word.maketrans('，。', ',.')
     name_table = name.maketrans('，', '!')
+    name_table2 = name.maketrans('，', '!', '发发') # 第三个参数表示从原始字符串中删除的字符集合，而不是连续的字符序列或子串
+    word_table2 = word.maketrans('，', '!', '我')
     new_word = word.translate(word_table)
     new_name = name.translate(name_table)
+    new_name2 = name.translate(name_table2)
+    new_word2 = word.translate(word_table2)
     print(new_word)
     print(new_name)
+    print(new_name2)
+    print(new_word2)
 
 
-def fun13():
+def test13():
     # 一字节 = 8位 = xYY(16进两位刚好表示一个字节)
     str_str = "hello, 摩托"
     print(type(str_str))
@@ -135,7 +141,7 @@ def fun13():
     print(str_byte.decode())
 
 
-def fun14():
+def test14():
     log_line = '"AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36"         47632'
     l = log_line.split()
     print(l)
@@ -146,7 +152,7 @@ def fun14():
     print(line_[1])
 
 
-def fun15():
+def test15():
     arr1 = ["ssssss", "ooooooo", "bbbbbb"]
     arr2 = ["我们", "花园"]
     print(arr1)
@@ -159,7 +165,7 @@ def fun15():
 
 
 # 字符切割 从右往左
-def fun16():
+def test16():
     str = "heew sdfsd,sdfds sdf sdf"
     print(str.split(' '))
     print(str.split(' ', maxsplit=1))  # 切割一次
@@ -167,19 +173,19 @@ def fun16():
 
 
 if __name__ == '__main__':
-    # fun1()
-    # fun2()
-    # fun3()
-    # fun4()
-    # fun5()
-    # fun6()
-    # fun7()
-    # fun8()
-    # fun9()
-    # fun10()
-    # fun11()
-    # fun12()
-    # fun13()
-    #    fun14()
-    fun15()
-# fun16()
+    # test1()
+    # test2()
+    # test3()
+    # test4()
+    # test5()
+    # test6()
+    # test7()
+    # test8()
+    # test9()
+    # test10()
+    # test11()
+    # test12()
+    # test13()
+    #    test14()
+    test15()
+# test16()
