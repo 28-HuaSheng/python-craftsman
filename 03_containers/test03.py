@@ -2,7 +2,7 @@ import copy
 from collections import namedtuple
 
 # List容器 操作
-def fun1():
+def test1():
     list_a = ["a", "b", "c", "d", "e"]
     list_b = list("abcdefghijklmn")
     print(list_a)
@@ -22,7 +22,7 @@ def fun1():
 
 
 # 遍历获取下标
-def fun2():
+def test2():
     list_a = ["wo", "he", "ni", "xin", "lian"]
 
     # for tmp in list_a:
@@ -38,7 +38,7 @@ def fun2():
 
 
 # 列表推倒式
-def fun3():
+def test3():
     result = []
     numbers = [1, 2, 3, 4, 5, 6]
 
@@ -65,7 +65,7 @@ def addStr(str):
 
 
 # 字符串不可变
-def fun4():
+def test4():
     someThing = "aaa"
     print(f'out method before: str="{someThing}"')
     addStr(someThing)
@@ -79,7 +79,7 @@ def addElement(list):
 
 
 # 列表是可变的
-def fun5():
+def test5():
     list = ["1", "2", "3"]
     print(f'out method before: list="{list}"')
     addElement(list)
@@ -87,7 +87,7 @@ def fun5():
 
 
 # 元祖构建
-def fun6():
+def test6():
     yuan_a = ("a", "b", "c")
     yuan_b = "aa", "bb", "cc"
     yuan_c = tuple("abcdef")
@@ -102,7 +102,7 @@ def getHW():
     return width, height
 
 
-def fun7():
+def test7():
     hw = getHW()
     print(hw, type(hw))
     # 自动解包
@@ -111,7 +111,7 @@ def fun7():
     print(height, type(height))
 
 
-def fun8():
+def test8():
     # 列表推导式
     res = [i * 100 for i in range(10) if i % 2 == 0]
     print(res)
@@ -123,14 +123,14 @@ def fun8():
     print(res_tuple_b)
 
 
-def fun9():
+def test9():
     list = ["name",13,"des",True]
     print(list[2])
 
     userinfo = ("name",13,"des",True)
     print(userinfo[3])
 
-def fun10():
+def test10():
     my_tuple = ("aaa","bbb","ccc",100,200)
     print(my_tuple[0])
     print(my_tuple[2])
@@ -138,15 +138,18 @@ def fun10():
     # 具名元祖
     names = namedtuple('names', 'nameA,nameB,nameC,width,height')
     my_tuple_2 = names("aaa","bbb","ccc",100,200)
+    my_tuple_3 = names(nameA="1212",nameB="sdfsdfsdf",width=1,height=222,nameC=1)
     print(my_tuple_2.width)
     print(my_tuple_2.nameB)
+    print(my_tuple_3.width)
+    print(my_tuple_3.nameB)
 
 
 
 
 ######################################## 字典 ########################################
 # 字典基操
-def fun11():
+def test11():
     movie = {"name":"摔跤吧爸爸","type":"movie","year":2222}
     print(movie['name'])
     print(type(movie['year']))
@@ -178,7 +181,7 @@ def fun11():
 
 
 
-def fun12():
+def test12():
     movie = {"name": "摔跤吧爸爸", "type": "movie", "year": 2222,"actor":["amierhan","huangchnb","others"]}
     movie['actor'].append("append some thing")
     print(movie)
@@ -207,7 +210,7 @@ def fun12():
     movie.pop("sssssss",None)
 
 # 字典推导式
-def fun13():
+def test13():
     movie = {"name": "摔跤吧爸爸", "type": "movie", "year": 2222, "actor": ["amierhan", "huangchnb", "others"]}
     res = {key:value*10 for key,value in movie.items() if key == "year"}
     print(res)
@@ -215,7 +218,7 @@ def fun13():
 
 ######################################## 集合 ########################################
 # 集合（无序，不重复）
-def fun14():
+def test14():
     coll = {"apple","banana","apple","orage","换","换","我"}
     print(coll)
 
@@ -240,11 +243,11 @@ def fun14():
 
     # 不可变集合
     notChange = frozenset(["apple","b"])
-    notChange.add("sdf")
+    # notChange.add("sdf")
 
 
 # 集合运算
-def fun15():
+def test15():
     a = {'a','b','c','d','d',1,2}
     b = {'a','b','r','r',2}
     c = {'f'}
@@ -265,7 +268,7 @@ def fun15():
 
 # 可哈希性
 # 集合只能放可哈希性对象
-def fun16():
+def test16():
     dict_a = {"a","b",('ffff',)}
     print(dict_a)
     dict_b = {"a","b",['a','b']} #报错 list列表 不可哈希
@@ -279,7 +282,7 @@ def fun16():
 
 
 # 浅拷贝
-def fun17():
+def test17():
     #
     nums = [1,2,3,4,5,6]
     nums_copy = nums
@@ -324,7 +327,7 @@ def fun17():
 
 
 # 深拷贝
-def fun18():
+def test18():
     items = ['1','2',['a','v'],'my']
     # 浅拷贝后,只修改第一层的值,不会影响原来
     items_copy = items.copy()
@@ -353,7 +356,7 @@ def generateNum(max_num):
         if i%2 == 0:
             yield i
 # 生成器
-def fun19():
+def test19():
     num = generateNum(10)
     print(num)
     for i in generateNum(10):
@@ -366,22 +369,22 @@ def fun19():
 
 if __name__ == '__main__':
     print("---main start---")
-    # fun1()
-    # fun2()
-    # fun3()
-    # fun4()
-    # fun5()
-    # fun6()
-    # fun7()
-    # fun8()
-    # fun9()
-    # fun10()
-    # fun11()
-    # fun12()
-    # fun13()
-    # fun14()
-    # fun15()
-    # fun16()
-    # fun17()
-    # fun18()
-    fun19()
+    # test1()
+    # test2()
+    # test3()
+    # test4()
+    # test5()
+    # test6()
+    # test7()
+    # test8()
+    # test9()
+    # test10()
+    # test11()
+    # test12()
+    # test13()
+    # test14()
+    # test15()
+    # test16()
+    # test17()
+    # test18()
+    test19()
